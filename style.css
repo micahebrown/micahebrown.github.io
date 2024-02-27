@@ -1,0 +1,13 @@
+h1 {
+    color: blue;
+    background-color: orange;
+    font-size: large;
+}
+body {
+    font-family: Verdana, sans-serif;
+    margin-left: 10%
+    margin-right: 10%
+}
+p {
+    text-wrap: pretty;
+}
