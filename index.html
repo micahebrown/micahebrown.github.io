@@ -76,21 +76,22 @@
         <button onclick="updateCount()">Next</button>
 
         <script>
-            var i = 20;
-            var white = document.body.style.backgroundColor;
+           var i = 20;
 
-            function updateCount() {
-            i = i - 1;
+function updateCount() {
+    i = i - 1;
     countobj = document.getElementById("count");
     console.log("Updating object: " + countobj);
     countobj.innerHTML = "<b>" + i + "</b>";
 
-    var redValue = Math.floor((20 - i) * (255 / 20));
+    var redValue = (0 + i) * 12;
 
-    var newColor = "rgb(" + redValue + ", " + white.split(',')[1] + ", " + white.split(',')[2];
+    document.body.style.backgroundColor = "rgb(" + redValue + ", 0, 0)";
 
-    document.body.style.backgroundColor = newColor;
-            }
+    if (i == 0) {
+        document.body.style.backgroundColor = "blue";
+    }
+}
         </script>
     </div>
     <html>
