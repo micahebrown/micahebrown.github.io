@@ -77,18 +77,19 @@
 
         <script>
             var i = 20;
+            var orignialColor = document.body.style.backgroundColor;
 
             function updateCount() {
-                i = i - 1;
-                countobj = document.getElementById("count");
-                console.log("Updating object: " + countobj);
-                countobj.innerHTML = "<b>" + i + "</b>";
+            i = i - 1;
+    countobj = document.getElementById("count");
+    console.log("Updating object: " + countobj);
+    countobj.innerHTML = "<b>" + i + "</b>";
 
-                var redValue = ((20 - i) * (255 / 20));
+    var redValue = Math.floor((20 - i) * (255 / 20));
 
-                var newColor = "rgb(" + redValue + ", " +originalColor.split('.')[1] + ", " + originalColor.split(',')[2];
+    var newColor = "rgb(" + redValue + ", " + originalColor.split(',')[1] + ", " + originalColor.split(',')[2];
 
-                document.body.style.backgroundColor = newColor; 
+    document.body.style.backgroundColor = newColor;
             }
         </script>
     </div>
