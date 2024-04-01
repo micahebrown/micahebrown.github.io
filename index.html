@@ -84,9 +84,11 @@
                 console.log("Updating object: " + countobj);
                 countobj.innerHTML = "<b>" + i + "</b>";
 
-                var redValue = (20 - i) * 10
+                var redValue = Math.floor((20 - i) * (255 / 20));
 
-                document.body.style.backgroundColor = "rgb( " + redValue + ", 0, 0)";    
+                var newColor = "rgb(" + redValue + ", " +originalColor.split('.')[1] + ", " + originalColor.split(',')[2];
+
+                document.body.style.backgroundColor = newColor; 
             }
         </script>
     </div>
