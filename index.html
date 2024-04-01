@@ -84,18 +84,16 @@
                 console.log("Updating object: " + countobj);
                 countobj.innerHTML = "<b>" + i + "</b>";
 
-                if (i==0) {
-                    document.body.style.backgroundColor = "blue";
-                }
+                var redValue = (20 - i) * 10
+
+                document.body.style.backgroundColor = "rgb( " + redValue + ", 0, 0)";    
             }
         </script>
     </div>
     <html>
     
-
-    <a href="fishing.html">Fish Pictures</a>
-    <a href="lacrosse.html">Lacrosse</a>
-    <a href="jsboom.html">Boom</a>
+    <a href="fishing.html">Fish Pictures</a>   
+    <a href="lacrosse.html">Lacrosse</a>    
 </main>
 </body>
 </html>
