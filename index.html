@@ -70,9 +70,32 @@
         <a href="https://www.linkedin.com/in/micah-brown-593466292/">LinkedIn</a>
         <p>Micah Brown is a first-year at the University of Virginia planning to study Finance in the McIntire School of Commerce.</p>
         <p>Bouncer at Boylan Heights Bar, volunteer for Madision House, and member of FBLA & the UVA Fly Fishing Club.</p>
+        <h1>Exploring the DOM</h1>
+
+        <h2>Count Down: <span id="count">20</span></h2>
+        <button onclick="updateCount()">Next</button>
+
+        <script>
+            var i = 20;
+
+            function updateCount() {
+                i = i - 1;
+                countobj = document.getElementById("count");
+                console.log("Updating object: " + countobj);
+                countobj.innerHTML = "<b>" + i + "</b>";
+
+                if (i==0) {
+                    document.body.style.backgroundColor = "blue";
+                }
+            }
+        </script>
     </div>
+    <html>
+    
+
     <a href="fishing.html">Fish Pictures</a>
     <a href="lacrosse.html">Lacrosse</a>
+    <a href="jsboom.html">Boom</a>
 </main>
 </body>
 </html>
