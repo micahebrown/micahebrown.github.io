@@ -72,7 +72,20 @@
         <p>Bouncer at Boylan Heights Bar, volunteer for Madision House, and member of FBLA & the UVA Fly Fishing Club.</p>
       <button>Click this to see a GOAT</button>
 
-      <script src ="script.js"></script>
+      <script>
+        function onButtonClick() {
+    
+    const image = document.createElement('img')
+
+    image.src = 'IMG_1192.jpeg';
+
+    document.body.appendChild(image);
+}
+
+const button = document.querySelector('buttin');
+button.addEventListener('click', onButtonClick);
+
+      </script>
         <h3>Exploring the DOM</h3>
         <h4>Count Down: <span id="count">20</span></h4>
         <button onclick="updateCount()">Next</button>
