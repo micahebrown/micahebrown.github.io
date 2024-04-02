@@ -70,24 +70,11 @@
         <a href="https://www.linkedin.com/in/micah-brown-593466292/">LinkedIn</a>
         <p>Micah Brown is a first-year at the University of Virginia planning to study Finance in the McIntire School of Commerce.</p>
         <p>Bouncer at Boylan Heights Bar, volunteer for Madision House, and member of FBLA & the UVA Fly Fishing Club.</p>
-        <h1>Exploring the DOM</h1>
+      <button>Click this to see a GOAT</button>
 
-        <h2>var button = document.createElement("button");</h2>
-        button.textContent = "Press this to see a GOAT";
-
-        var img = document.createElemet("img");
-        img.setAttribute("src", "IMG_1192.jpeg");
-        img.setAttribute("alt", "GOAT");
-        img.style.display = "none";
-
-        document.body.appendChild(button);
-        document.body.appendChild(img);
-
-        button.addEventListener("click", function() {
-            img.style.display = "block";
-        });
-        
-        <h3>Count Down: <span id="count">20</span></h3>
+      <script src ="script.js"></script>
+        <h3>Exploring the DOM</h3>
+        <h4>Count Down: <span id="count">20</span></h4>
         <button onclick="updateCount()">Next</button>
 
         <script>
