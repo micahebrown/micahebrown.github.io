@@ -7,5 +7,5 @@ function onButtonClick() {
     document.body.appendChild(image);
 }
 
-const button = document.querySelector('buttin');
+const button = document.querySelector('button');
 button.addEventListener('click', onButtonClick);
