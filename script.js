@@ -1,5 +1,5 @@
 function onButtonClick() {
-    
+    console.log('Button Clicked!')
     const image = document.createElement('img')
 
     image.src = 'IMG_1192.jpeg';
