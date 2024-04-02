@@ -5,7 +5,7 @@ function onButtonClick() {
     image.src = 'IMG_1192.jpeg';
 
     document.body.appendChild(image);
-}
 
 const button = document.querySelector('button');
 button.addEventListener('click', onButtonClick);
+}
