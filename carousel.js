@@ -4,10 +4,9 @@ let currentIndex = 0;
 function showSlide(index) {
     
     carouselItems.forEach(item => {
-        style.display = 'none';
-});
-
-carouselItems[Index].style.display = 'block';
+        item.style.display = 'none';
+    });
+    carouselItems[index].style.display = 'block';
 }
 
 function nextSlide() {
