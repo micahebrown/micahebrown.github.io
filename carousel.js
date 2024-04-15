@@ -1,25 +1,49 @@
-const carouselItems = document.querySelectorAll('.carousel-item');
-let currentIndex = 0;
+!(function(d){
+var itemClassName = "carousel__photo";
+    items = d.getElementsByClassName(itemClassName),
+    totalItems =items.length,
+    slide = 0,
+    moving = true;
+function setInitialClasses(){
 
-function showSlide(index) {
-    
-    carouselItems.forEach(item => {
-        item.style.display = 'none';
-    });
-    carouselItems[index].style.display = 'block';
+    items[totalItems - 1].classList.add("prev");
+    items[0].classList.add("active");
+    items[1].classList.add("next");
 }
 
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % carouselItems.length;
-    showSlide(currentIndex);
+function setEventListeners(){
+    var next= d.getElementsByClassName('carousel__button--next')[0],
+    prev = d.getElementsByClassName('carousel__button--prev')[0];
+
+    next.addEventListener('click', moveNext);
+    prev.addEventListener('click', movePrev);
 }
 
-function previousSlide() {
-    currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-    showSlide(currentIndex);
-}
+function moveNext() {
 
-showSlide(currentIndex);
+    if (!moving) {
 
-document.getElementById('nextBtn').addEventListener('click', nextSlide);
-document.getElementById('prevBtn').addEventListener('click', previousSlide);
+        if (slide === (totalItems - 1)){
+            slide = 0;
+        } else {
+            slide++;
+        }
+
+        moveCarouselTo(slide);
+        }
+    }
+
+function movePrev() {
+
+    if (!moving) {
+
+        if (slide === 0) {
+            slide = (totalItems - 1);
+        } else {
+            slide--;
+        }
+
+        moveCarouselTo(slide);
+        }
+    }
+}(document));
