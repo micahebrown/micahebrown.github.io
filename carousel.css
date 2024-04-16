@@ -25,11 +25,14 @@
 .carousel__photo.active {
     opacity: 1;
     z-index: 900;
-    transform: translateX(0);
     position: relative; 
 }
+.carousel__photo.prev,
+.carousel__photo.next {
+    z-index: 800;
+}
 
-.carousel__photo.prev {
+.carousel__photo.prev{
     transform: translateX(-100%);
 }
 
