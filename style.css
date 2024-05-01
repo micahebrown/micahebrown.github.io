@@ -28,3 +28,238 @@ p {
     height: 100%;
     object-fit: cover;
 }
+.carousel-wrapper {
+    overflow: hidden;
+    width: 90%;
+    box-sizing: border-box;
+    position: relative;
+}
+.carousel {
+    display: flex; 
+    transition: transform 0.5s ease;
+}
+.carousel__photo {
+    opacity: 0;
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 1rem 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
+}
+.carousel__photo.initial,
+.carousel__photo.active {
+    opacity: 1;
+    z-index: 900;
+    position: relative; 
+}
+.carousel__photo.prev,
+.carousel__photo.next {
+    z-index: 800;
+}
+
+.carousel__photo.prev{
+    transform: translateX(-100%);
+}
+
+.carousel__photo.next {
+    transform: translateX(100%);
+}
+
+.carousel__button--prev,
+.carousel__button--next {
+    position: absolute;
+    top: 50%;
+    width: 3rem;
+    height: 3rem;
+    background-color: #FFF;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+    border: 1px solid black;
+}
+
+.carousel__button--prev {
+    left: 0;
+}
+
+.carousel__button--next {
+    right: 0;
+}
+
+.carousel__button--prev::after,
+.carousel__button--next::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(135deg);
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.carousel__button--next::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+vide.css{ 
+    margin: 0; 
+    padding: 0; 
+} 
+  
+body { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
+    flex-direction: column; 
+    border: none; 
+} 
+  
+.gfg { 
+    padding-bottom: 10px; 
+    display: flex; 
+    justify-content: space-around; 
+    flex-direction: column; 
+    font-size: 24px; 
+    font-weight: 600; 
+    color: #01940b; 
+    align-items: center; 
+} 
+  
+.video-container { 
+    max-width: 500px; 
+    max-height: 300px; 
+    position: relative; 
+    border: 1px; 
+    border-style: ridge; 
+    margin: 0 auto; 
+    background-color: black; 
+} 
+  
+#video-thumbnail { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    cursor: pointer; 
+} 
+  
+#video, 
+img { 
+    width: 100%; 
+    height: 100%; 
+} 
+  
+.controls { 
+    position: absolute; 
+    bottom: 0px; 
+    left: 0; 
+    right: 0; 
+    height: 40px; 
+    background-color: rgba( 
+        0, 
+        0, 
+        0, 
+        0.7
+    ); 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px; 
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out; 
+} 
+  
+.controls button { 
+    background-color: transparent; 
+    border: none; 
+    color: #fff; 
+    font-size: 20px; 
+    cursor: pointer; 
+    outline: none; 
+} 
+  
+.left { 
+    position: relative; 
+    top: 1%; 
+    width: 70px; 
+    display: flex; 
+    justify-content: space-between; 
+} 
+  
+.video-timer { 
+    position: relative; 
+    top: 5.2px; 
+    right: 6px; 
+    display: flex; 
+    flex-direction: row; 
+    color: #efefef; 
+    margin-left: 15px; 
+    font-size: 12px; 
+} 
+  
+#separator { 
+    margin: 0 5px; 
+    font-size: 16px; 
+    font-family: "Open sans"; 
+} 
+  
+.right { 
+    position: relative; 
+    padding: 10px; 
+    top: 1.5px; 
+} 
+  
+.fa-volume-up, 
+.fa-solid { 
+    font-size: small; 
+    padding: 5px; 
+    color: rgb(255, 255, 255); 
+} 
+  
+button, 
+input { 
+    background-color: transparent; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 20px; 
+} 
+  
+.volume-container { 
+    display: flex; 
+    align-items: center; 
+} 
+  
+#volume { 
+    position: relative; 
+    left: 5px; 
+    width: 50px; 
+    height: 3px; 
+} 
+  
+#mute { 
+    cursor: pointer; 
+} 
+  
+.playback-line { 
+    position: relative; 
+    top: 2.7px; 
+    height: 4px; 
+    background-color: #ddd; 
+    width: 40%; 
+    cursor: pointer; 
+} 
+  
+.progress-bar { 
+    height: 100%; 
+    width: 0; 
+    background-color: #0078d4; 
+    transition: width 0.1s linear; 
+}
