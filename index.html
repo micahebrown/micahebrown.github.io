@@ -1,183 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Micah Brown</title>
-<link rel="stylesheet" href="style.css" type="text/css">
-<link rel="stylesheet" type="text/css" href="carousel.css">
-<link rel="stylesheet" type="text/css" href="video.css"
-<style>
-    a {
-        color: blue;
-        text-decoration: underline;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Micah Brown</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="carousel.css" />
+    <link rel="stylesheet" type="text/css" href="video.css" />
+    <style>
+        a {
+            color: blue;
+            text-decoration: underline;
+        }
 
-  
-    a:visited {
-        color: blue;
-    }
+        a:visited {
+            color: blue;
+        }
 
+        a:hover {
+            color: darkblue;
+        }
 
-    a:hover {
-        color: darkblue;
-    }
-
-   
-    a:active {
-        color: darkblue;
-    }
-    body {
-        font-family: Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    header {
-        font-family: Verdana, sans-serif;
-        text-align: center;
-        padding: 20px 0;
-        background-color: #f0f0f0;
-        border-top: 2px solid #333;
-        border-bottom: 2px solid #333;
-    }
-    img {
-        display: block;
-        margin: 0 auto;
-        width: 50%;
-        max-width: 400px;
-        height: auto;
-    }
-    .container {
-        text-align: center;
-        margin-top: 20px;
-    }
-    .container a {
-        text-decoration: none;
-        color: #333;
-        margin: 0 10px;
-    }
-    .container p {
-        margin-bottom: 10px;
-    }
-</style>
+        a:active {
+            color: darkblue;
+        }
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            font-family: Verdana, sans-serif;
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f0f0f0;
+            border-top: 2px solid #333;
+            border-bottom: 2px solid #333;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            width: 50%;
+            max-width: 400px;
+            height: auto;
+        }
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .container a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+        }
+        .container p {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-<header>
-    <h1>Micah Brown</h1>
-</header>
-<main>
-    <a href="/headshot.jpg"><img width="%80" src="/headshot.jpg" alt="headshot"></a>
-    <div class="container">
-        <a href="mailto:micahebrown@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/micah-brown-593466292/">LinkedIn</a>
-        <p>Micah Brown is a first-year at the University of Virginia planning to study Finance in the McIntire School of Commerce.</p>
-        <p>Bouncer at Boylan Heights Bar, volunteer for Madision House, and member of FBLA & the UVA Fly Fishing Club.</p>
-      
-        <button>Click this to see a GOAT</button>
-
-        <h3>Exploring the DOM</h3>
-        <h4>Count Down: <span id="count">20</span></h4>
-        <button onclick="updateCount()">Next</button>
-
-        <script>
-           var i = 20;
-
-function updateCount() {
-    i = i - 1;
-    countobj = document.getElementById("count");
-    console.log("Updating object: " + countobj);
-    countobj.innerHTML = "<b>" + i + "</b>";
-
-    var redValue = (0 + i) * 20;
-
-    document.body.style.backgroundColor = "rgb(" + redValue + ", 0, 0)";
-
-    if (i == 0) {
-        document.body.style.backgroundColor = "blue";
-    }
-}
-        </script>
-    </div>
-
-    <div class="carousel-wrapper">
-        <div class="carousel">
-            <img class="carousel__photo initial" src="IMG_0136.jpeg">
-            <img class="carousel__photo" src="IMG_0817.jpeg">
-            <img class="carousel__photo" src="IMG_0369.jpeg">
-            <img class="carousel__photo" src="IMG_0382.jpeg">
-            <img class="carousel__photo" src="IMG_0526.jpeg">
+    <header>
+        <h1>Micah Brown</h1>
+    </header>
+    <main>
+        <a href="/headshot.jpg"><img src="/headshot.jpg" alt="headshot" /></a>
+        <div class="container">
+            <a href="mailto:micahebrown@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/micah-brown-593466292/">LinkedIn</a>
+            <p>Micah Brown is a first-year at the University of Virginia planning to study Finance in the McIntire School of Commerce.</p>
+            <p>Bouncer at Boylan Heights Bar, volunteer for Madision House, and member of FBLA & the UVA Fly Fishing Club.</p>
+            <button>Click this to see a GOAT</button>
+            <h3>Exploring the DOM</h3>
+            <h4>Count Down: <span id="count">20</span></h4>
+            <button onclick="updateCount()">Next</button>
+            <script>
+                var i = 20;
+                function updateCount() {
+                    i = i - 1;
+                    countobj = document.getElementById("count");
+                    console.log("Updating object: " + countobj);
+                    countobj.innerHTML = "<b>" + i + "</b>";
+                    var redValue = (0 + i) * 20;
+                    document.body.style.backgroundColor = "rgb(" + redValue + ", 0, 0)";
+                    if (i == 0) {
+                        document.body.style.backgroundColor = "blue";
+                    }
+                }
+            </script>
         </div>
-        <div class="carousel__nav">
-            <button class="carousel__button--next">Next</button>
-            <button class="carousel__button--prev">Prev</button>
+        <div class="carousel-wrapper">
+            <div class="carousel">
+                <img class="carousel__photo initial" src="IMG_0136.jpeg" />
+                <img class="carousel__photo" src="IMG_0817.jpeg" />
+                <img class="carousel__photo" src="IMG_0369.jpeg" />
+                <img class="carousel__photo" src="IMG_0382.jpeg" />
+                <img class="carousel__photo" src="IMG_0526.jpeg" />
+            </div>
+            <div class="carousel__nav">
+                <button class="carousel__button--next">Next</button>
+                <button class="carousel__button--prev">Prev</button>
+            </div>
         </div>
-    </div>    
-    
-    <a href="fishing.html">Fish Pictures</a>   
-    <a href="lacrosse.html">Lacrosse</a>  
-
-        <meta charset="UTF-8">
-        <meta name="viewport"
-            content="width=device-width,
-            initial-scale=1.0">
-        <title>Video Player-GFG</title>
-
+        <a href="fishing.html">Fish Pictures</a>
+        <a href="lacrosse.html">Lacrosse</a>
         <div class="gfg">
             <p>Last Goal of my Career</p>
         </div>
-
         <div class="video-container">
-            <img src="IMG_0192.jpeg"
-                id="video-thumbnail">
+            <img src="IMG_0192.jpeg" id="video-thumbnail" />
             <video id="video">
-
-                <source src="IMG_3866.mov"
-                type="video/mov">
+                <source src="IMG_3866.mov" type="video/mov" />
             </video>
-
-            <div class="controls"> 
-              
-                  <div class="left"> 
-                      <button id="skipminus-10"> 
-                          <i class="fa-solid fa-backward"></i> 
-                        </button> 
-                      <button id="play-pause"> 
-                          <i class="fa-solid fa-play"></i> 
-                        </button> 
-                      <button id="skip-10"> 
-                            <i class="fa-solid fa-forward"></i> 
-                        </button> 
-                  </div> 
-                  
-                  <div class="video-timer"> 
-                      <span id="current-time">00:00</span> 
-                      <span id="separator">/</span> 
-                      <span id="max-duration">00:00</span> 
-                  </div> 
-                  <div class="playback-line"> 
-                      <div class="progress-bar"></div> 
-        
-                  </div> 
-                  
-                  <div class="right"> 
-                      <div class="volume-container"> 
-                          <div id="mute"> 
-                              <i class="fas fa-volume-up"></i> 
-                          </div> 
-                          <input type="range" 
-                                 id="volume" 
-                                 min="0" 
-                                 max="1" 
-                                 step="0.01" 
-                                 value="1"> 
-                      </div> 
-                  </div> 
-              </div> 
-          </div> 
-
-</main>
-<script src="script.js"></script>
-<script src="carousel.js"></script>
-<script src="video.js"></script>
+            <div class="controls">
+                <div class="left">
+                    <button id="skipminus-10">
+                        <i class="fa-solid fa-backward"></i>
+                    </button>
+                    <button id="play-pause">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <button id="skip-10">
+                        <i class="fa-solid fa-forward"></i>
+                    </button>
+                </div>
+                <div class="video-timer">
+                    <span id="current-time">00:00</span>
+                    <span id="separator">/</span>
+                    <span id="max-duration">00:00</span>
+                </div>
+                <div class="playback-line">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="right">
+                    <div class="volume-container">
+                        <div id="mute">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <input type="range" id="volume" min="0" max="1" step="0.01" value="1" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <script src="carousel.js"></script>
+    <script src="video.js"></script>
 </body>
 </html>
