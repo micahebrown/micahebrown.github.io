@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Micah Brown</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="style.css">
     <style>
         a {
             color: blue;
@@ -61,31 +61,37 @@
         <h1>Micah Brown</h1>
     </header>
     <main>
-        <a href="/headshot.jpg"><img src="/headshot.jpg" alt="headshot" /></a>
+        <a href="/headshot.jpg"><img src="/headshot.jpg" alt="headshot"></a>
         <div class="container">
             <a href="mailto:micahebrown@gmail.com">Email</a>
             <a href="https://www.linkedin.com/in/micah-brown-593466292/">LinkedIn</a>
             <p>Micah Brown is a first-year at the University of Virginia planning to study Finance in the McIntire School of Commerce.</p>
             <p>Bouncer at Boylan Heights Bar, volunteer for Madision House, and member of FBLA & the UVA Fly Fishing Club.</p>
+
             <button>Click this to see a GOAT</button>
-            <h3>Exploring the DOM</h3>
-            <h4>Count Down: <span id="count">20</span></h4>
-            <button onclick="updateCount()">Next</button>
+
             <script>
-                var i = 20;
-                function updateCount() {
-                    i = i - 1;
-                    countobj = document.getElementById("count");
-                    console.log("Updating object: " + countobj);
-                    countobj.innerHTML = "<b>" + i + "</b>";
-                    var redValue = (0 + i) * 20;
-                    document.body.style.backgroundColor = "rgb(" + redValue + ", 0, 0)";
-                    if (i == 0) {
-                        document.body.style.backgroundColor = "blue";
-                    }
+                function onButtonClick() {
+                    const image = document.createElement('img');
+                    image.src = 'IMG_0012.jpeg';
+                    document.body.appendChild(image);
                 }
+
+                const button = document.querySelector('button');
+                button.addEventListener('click', onButtonClick);
+
+                const newButton = document.createElement('button');
+                newButton.textContent = 'Click this to see a GOAT';
+                document.body.appendChild(newButton);
+
+                newButton.addEventListener('click', () => {
+                    const image = document.createElement('img');
+                    image.src = 'IMG_0012.jpeg';
+                    document.body.appendChild(image);
+                });
             </script>
         </div>
+
         <div class="carousel-wrapper">
             <div class="carousel">
                 <img class="carousel__photo initial" src="IMG_0136.jpeg" />
@@ -98,16 +104,102 @@
                 <button class="carousel__button--next">Next</button>
                 <button class="carousel__button--prev">Prev</button>
             </div>
+              
+            <style>
+                .carousel-wrapper {
+                    overflow: hidden;
+                    width: 90%;
+                    box-sizing: border-box;
+                    position: relative;
+                }
+                .carousel {
+                    display: flex; 
+                    transition: transform 0.5s ease;
+                }
+                .carousel__photo {
+                    opacity: 0;
+                    flex: 0 0 auto;
+                    width: 100%;
+                    height: auto;
+                    margin: auto;
+                    padding: 1rem 4rem;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 100;
+                    transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
+                }
+                .carousel__photo.initial,
+                .carousel__photo.active {
+                    opacity: 1;
+                    z-index: 900;
+                    position: relative; 
+                }
+                .carousel__photo.prev,
+                .carousel__photo.next {
+                    z-index: 800;
+                }
+
+                .carousel__photo.prev{
+                    transform: translateX(-100%);
+                }
+
+                .carousel__photo.next {
+                    transform: translateX(100%);
+                }
+
+                .carousel__button--prev,
+                .carousel__button--next {
+                    position: absolute;
+                    top: 50%;
+                    width: 3rem;
+                    height: 3rem;
+                    background-color: #FFF;
+                    transform: translateY(-50%);
+                    border-radius: 50%;
+                    cursor: pointer;
+                    z-index: 1001;
+                    border: 1px solid black;
+                }
+
+                .carousel__button--prev {
+                    left: 0;
+                }
+
+                .carousel__button--next {
+                    right: 0;
+                }
+
+                .carousel__button--prev::after,
+                .carousel__button--next::after {
+                    content: "";
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) rotate(135deg);
+                    border-right: 2px solid black;
+                    border-bottom: 2px solid black;
+                }
+
+                .carousel__button--next::after {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+            </style>
+            <script src="carousel.js"></script>
         </div>
+
         <a href="fishing.html">Fish Pictures</a>
         <a href="lacrosse.html">Lacrosse</a>
+
         <div class="gfg">
             <p>Last Goal of my Career</p>
         </div>
         <div class="video-container">
             <img src="IMG_0192.jpeg" id="video-thumbnail" />
             <video id="video">
-                <source src="IMG_3866.mov" type="video/mov" />
+                <source src="IMG_3866.mov" type="video/mp4" />
             </video>
             <div class="controls">
                 <div class="left">
@@ -124,22 +216,6 @@
                 <div class="video-timer">
                     <span id="current-time">00:00</span>
                     <span id="separator">/</span>
-                    <span id="max-duration">00:00</span>
-                </div>
-                <div class="playback-line">
-                    <div class="progress-bar"></div>
-                </div>
-                <div class="right">
-                    <div class="volume-container">
-                        <div id="mute">
-                            <i class="fas fa-volume-up"></i>
-                        </div>
-                        <input type="range" id="volume" min="0" max="1" step="0.01" value="1" />
                     </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <script src="script.js"></script>
-</body>
-</html>
+                </body>
+                </html>
